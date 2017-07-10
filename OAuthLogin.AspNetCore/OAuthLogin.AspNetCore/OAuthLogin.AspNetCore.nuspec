@@ -18,6 +18,6 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="bin\Release\OAuthLogin.AspNetCore.dll" target="lib\OAuthLogin.AspNetCore.dll" />
+        <file src="bin\Release\netcoreapp1.1\OAuthLogin.AspNetCore.dll" target="lib\OAuthLogin.AspNetCore.dll" />
     </files>
 </package>
