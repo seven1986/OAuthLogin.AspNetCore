@@ -14,33 +14,7 @@ PM> Install-Package OAuthLogin.AspNetCore
 Usage
 ------
 
-第一步：新建配置实体类：
-```csharp
-    /// <summary>
-    /// 第三方平台APP信息配置实体类
-    /// </summary>
-    public class CredentialsSetting {
-        public CredentialSetting QQ { get; set; }
-        public CredentialSetting Wechat { get; set; }
-        public CredentialSetting Weibo { get; set; }
-        public CredentialSetting FaceBook { get; set; }
-        public CredentialSetting KaKao { get; set; }
-    }
-
-    public class CredentialSetting {
-        /// <summary>
-        /// AppKey
-        /// </summary>
-        public string client_id { get; set; }
-
-        /// <summary>
-        /// AppSecret
-        /// </summary>
-        public string client_secret { get; set; }
-    }
-```
-
-第二步：配置appsettings.json文件
+第一步：配置appsettings.json文件
 ```json
 {
   "Logging": {
@@ -76,28 +50,24 @@ Usage
 }
 ```
 
-第三步：在Startup.cs配置微博、微信、QQ、facebook、Kakao的client_id、client_secret
+第二步：在Startup.cs配置微博、微信、QQ、facebook、Kakao的client_id、client_secret
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            // ..省略其他代码
-
-            #region 第三方平台配置
             var Credentials = Configuration.GetSection("Credentials").Get<CredentialsSetting>();
             LoginProvider.UseWeibo(Credentials.Weibo.client_id, Credentials.Weibo.client_secret);
             LoginProvider.UseQQ(Credentials.QQ.client_id, Credentials.QQ.client_secret);
             LoginProvider.UseFaceBook(Credentials.FaceBook.client_id, Credentials.FaceBook.client_secret);
             LoginProvider.UseWechat(Credentials.Wechat.client_id, Credentials.Wechat.client_secret);
             LoginProvider.UseKakao(Credentials.KaKao.client_id); 
-            #endregion
         }
 ```
 
-第四步：添加Views/OAuth文件夹，添加5个空文件：QQ.cshtml、Facebook.cshtml、Wechat.cshtml、Webo.cshtml、Facebook.cshtml
+第三步：添加Views/OAuth文件夹，添加5个空文件：QQ.cshtml、Facebook.cshtml、Wechat.cshtml、Webo.cshtml、Facebook.cshtml
 
 
-第五步：添加Controllers/OAuthController.cs
+第四步：添加Controllers/OAuthController.cs
 ```csharp
 public class OAuthController : Controller
     {
