@@ -11,10 +11,16 @@ PM> Install-Package OAuthLogin.AspNetCore
 ```
 
 
+---
+
+If you are looking for the ASP.NET version please head to [OAuthLogin](https://github.com/seven1986/OAuthLogin) project.
+
+---
+
 Usage
 ------
 
-µÚÒ»²½£ºÅäÖÃappsettings.jsonÎÄ¼ş
+ç¬¬ä¸€æ­¥ï¼šé…ç½®appsettings.jsonæ–‡ä»¶
 ```json
 {
   "Logging": {
@@ -50,7 +56,7 @@ Usage
 }
 ```
 
-µÚ¶ş²½£ºÔÚStartup.csÅäÖÃÎ¢²©¡¢Î¢ĞÅ¡¢QQ¡¢facebook¡¢KakaoµÄclient_id¡¢client_secret
+ç¬¬äºŒæ­¥ï¼šåœ¨Startup.csé…ç½®å¾®åšã€å¾®ä¿¡ã€QQã€facebookã€Kakaoçš„client_idã€client_secret
 
 ```csharp
  // This method gets called by the runtime. Use this method to add services to the container.
@@ -77,7 +83,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 ```
 
 
-µÚÈı²½£ºÌí¼ÓControllers/OAuthController.cs
+ç¬¬ä¸‰æ­¥ï¼šæ·»åŠ Controllers/OAuthController.cs
 ```csharp
 public class OAuthController : Controller
     {
@@ -205,7 +211,7 @@ public class OAuthController : Controller
         {
             var OAuthResult = JsonConvert.SerializeObject(_entity);
 
-            // Ìø×ªµÄÒ³Ãæ£¬union²ÎÊıºóÃæÊÇ±àÂëºóµÄÓÃ»§Êı¾İ
+            // è·³è½¬çš„é¡µé¢ï¼Œunionå‚æ•°åé¢æ˜¯ç¼–ç åçš„ç”¨æˆ·æ•°æ®
             var url = "/login?union=" + WebUtility.UrlEncode(OAuthResult);
 
             return Redirect(url);
@@ -213,15 +219,15 @@ public class OAuthController : Controller
     }
 ```
 
-µÚËÄ²½£ºÌí¼Ó5¸ö¿ÕÒ³Ãæ,Ò³ÃæÀï²»ÒªÓĞ´úÂë
+ç¬¬å››æ­¥ï¼šæ·»åŠ 5ä¸ªç©ºé¡µé¢,é¡µé¢é‡Œä¸è¦æœ‰ä»£ç 
 ```
-1£¬Views/OAuth/QQ.cshtml
+1ï¼ŒViews/OAuth/QQ.cshtml
 
-2£¬Views/OAuth/Facebook.cshtml
+2ï¼ŒViews/OAuth/Facebook.cshtml
 
-3£¬Views/OAuth/Wechat.cshtml
+3ï¼ŒViews/OAuth/Wechat.cshtml
 
-4£¬Views/OAuth/Webo.cshtml
+4ï¼ŒViews/OAuth/Webo.cshtml
 
-5£¬Views/OAuth/Facebook.cshtml
+5ï¼ŒViews/OAuth/Facebook.cshtml
 ```
