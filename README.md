@@ -53,21 +53,31 @@ Usage
 第二步：在Startup.cs配置微博、微信、QQ、facebook、Kakao的client_id、client_secret
 
 ```csharp
+ // This method gets called by the runtime. Use this method to add services to the container.
+public void ConfigureServices(IServiceCollection services)
+{
+    // for HttpContext
+    services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+}
+
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-        {
-            var Credentials = Configuration.GetSection("Credentials").Get<CredentialsSetting>();
-            LoginProvider.UseWeibo(Credentials.Weibo.client_id, Credentials.Weibo.client_secret);
-            LoginProvider.UseQQ(Credentials.QQ.client_id, Credentials.QQ.client_secret);
-            LoginProvider.UseFaceBook(Credentials.FaceBook.client_id, Credentials.FaceBook.client_secret);
-            LoginProvider.UseWechat(Credentials.Wechat.client_id, Credentials.Wechat.client_secret);
-            LoginProvider.UseKakao(Credentials.KaKao.client_id); 
-        }
+{
+    var Credentials = Configuration.GetSection("Credentials").Get<CredentialsSetting>();
+
+    LoginProvider.UseWeibo(Credentials.Weibo.client_id, Credentials.Weibo.client_secret);
+
+    LoginProvider.UseQQ(Credentials.QQ.client_id, Credentials.QQ.client_secret);
+
+    LoginProvider.UseFaceBook(Credentials.FaceBook.client_id, Credentials.FaceBook.client_secret);
+
+    LoginProvider.UseWechat(Credentials.Wechat.client_id, Credentials.Wechat.client_secret);
+
+    LoginProvider.UseKakao(Credentials.KaKao.client_id); 
+}
 ```
 
-第三步：添加Views/OAuth文件夹，添加5个空文件：QQ.cshtml、Facebook.cshtml、Wechat.cshtml、Webo.cshtml、Facebook.cshtml
 
-
-第四步：添加Controllers/OAuthController.cs
+第三步：添加Controllers/OAuthController.cs
 ```csharp
 public class OAuthController : Controller
     {
@@ -201,4 +211,17 @@ public class OAuthController : Controller
             return Redirect(url);
         }
     }
+```
+
+第四步：添加5个空页面,页面里不要有代码
+```
+1，Views/OAuth/QQ.cshtml
+
+2，Views/OAuth/Facebook.cshtml
+
+3，Views/OAuth/Wechat.cshtml
+
+4，Views/OAuth/Webo.cshtml
+
+5，Views/OAuth/Facebook.cshtml
 ```
