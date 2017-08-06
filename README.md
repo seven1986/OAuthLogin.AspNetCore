@@ -1,5 +1,9 @@
 # OAuthLogin.AspNetCore [![Build status](https://ci.appveyor.com/api/projects/status/7oa50i7lt9fboq5m?svg=true)](https://ci.appveyor.com/project/seven1986/oauthlogin-aspnetcore) [![NuGet](https://img.shields.io/nuget/v/OAuthLogin.AspNetCore.svg)](https://www.nuget.org/packages/OAuthLogin.AspNetCore)  [![Join the chat at https://gitter.im/OAuthLogin/OAuthLogin](https://img.shields.io/gitter/room/OAuthLogin/OAuthLogin.svg?style=flat-square)](https://gitter.im/OAuthLogin/OAuthLogin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/seven1986/OAuthLogin.AspNetCore.svg)](http://isitmaintained.com/project/seven1986/OAuthLogin.AspNetCore "Average time to resolve an issue") [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/seven1986/OAuthLogin/master/LICENSE)
 
+NuGet downloads (OAuthLogin) | NuGet downloads (OAuthLogin.AspNetCore)
+--------------- | ---------------
+[![NuGet downloads OAuthLogin](https://img.shields.io/nuget/dt/OAuthLogin.svg)](https://www.nuget.org/packages/OAuthLogin)|[![NuGet downloads OAuthLogin.AspNetCore](https://img.shields.io/nuget/dt/OAuthLogin.AspNetCore.svg)](https://www.nuget.org/packages/OAuthLogin.AspNetCore)
+
 Installation
 -------------
 
